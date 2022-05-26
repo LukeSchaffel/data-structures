@@ -61,13 +61,19 @@ class LinkedList {
         this.tail.next = null
       }
       return removedTail.value
-      
     }
-
   }
 
-  search(){
-
+  search(value){
+    let currentNode = this.head
+    
+    while (currentNode){
+      if (currentNode.value === value) {
+        return currentNode
+      }
+      currentNode = currentNode.next
+    }
+    return null
   }
 }
 
@@ -77,5 +83,4 @@ class Node {
     this.prev = prev || null
     this.next = next || null
   }
-
 }
