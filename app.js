@@ -30,7 +30,39 @@ class LinkedList {
     }
   }
 
+  deleteHead(){
+    //if list is empty
+    if (!this.head) {
+      return null
+    } else {
+      let removedHead = this.head
+      //if 1 node left
+      if (this.head === this.tail){
+        this.head = this.tail = null
+      } else {
+        this.head = this.head.next
+        this.head.prev = null
+      }
+      return removedHead.value
+    }
+  }
+
   deleteTail(){
+    //empty list
+    if (!this.tail) {
+      return null
+    } else {
+      let removedTail = this.tail
+      //if 1 node left
+      if (this.head === this.tail) {
+        this.head = this.tail = null
+      } else {
+        this.tail = this.tail.prev
+        this.tail.next = null
+      }
+      return removedTail.value
+      
+    }
 
   }
 
