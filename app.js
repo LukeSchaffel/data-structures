@@ -8,12 +8,12 @@ class LinkedList {
   append(value){
     //if the list is empty
     if (!this.tail) {
-      this.head = this.tail = newNode(value)
+      this.head = this.tail = new Node(value)
     } else {
       let oldTail = this.tail
       this.tail = new Node(value)
       oldTail.next = this.tail
-      this.tail.previous = oldTail
+      this.tail.prev = oldTail
     }
 
   }
@@ -84,3 +84,13 @@ class Node {
     this.next = next || null
   }
 }
+
+let list = new LinkedList()
+
+list.append("joey")
+list.append("Jeff")
+list.prepend("Slubyu")
+
+
+// console.log(list);
+
